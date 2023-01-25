@@ -1,0 +1,8 @@
+.operaciones,.contenedore{
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+.todo{
+    background-color: rgb(28, 26, 26);
+}

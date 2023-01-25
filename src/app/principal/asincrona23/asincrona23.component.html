@@ -1,0 +1,26 @@
+<section class="todo">
+  <form class="container-sm ">
+    <h1 class="text-white">OPERACIONES CON NÚMEROS</h1>
+    <mat-form-field>
+      <mat-label>numero 1</mat-label>
+      <input [(ngModel)]="num1"name="asd" type="number" matInput placeholder="123..." value="">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>numero 2</mat-label>
+      <input [(ngModel)]="num2" name="asd" type="number" matInput placeholder="123..." value="">
+    </mat-form-field>
+  </form>
+  <section class=" container operaciones">
+    <mat-slide-toggle [(ngModel)]="suma" class="m-2">Suma</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="resta" class="m-2">Resta</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="multi" class="m-2">Multiplicacion</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="divi" class="m-2">Dvivision</mat-slide-toggle>
+  </section>
+  <section class="container">
+    <button mat-raised-button color="primary" class="m-2" (click)="operacion()">Calcular</button>
+    <p class="text-light m-3">{{resultado}}</p>
+    <p class="text-light m-3">{{resultado_res}}</p>
+    <p class="text-light m-3">{{resultado_mul}}</p>
+    <p class="text-light m-3">{{resultado_divi}}</p>
+  </section>
+</section>

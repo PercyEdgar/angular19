@@ -24,4 +24,14 @@ getUserId(userId: string): Observable<Users> {
   const url = this.apiUser + userId;
   return this.http.get<Users>(url);
   }
+  // Metodo POST para enviar datos a la API users
+  postUser(usuario: Users):Observable<Users>{
+    return this.http.post<Users>(this.apiUser, usuario)
+  }
+
+  // Metopdo para el intersector
+   getUserAllInterceptor():Observable<any>{
+    return this.http.get(this.apiUser,{observe: 'response'})
+    }
+
 }

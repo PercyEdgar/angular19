@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrincipalModule } from './principal/principal.module';
 
-import{HttpClientModule} from '@angular/common/http';
+import{HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { UserinterceptorsService } from './services/userinterceptors.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,9 +16,16 @@ import{HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     PrincipalModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UserinterceptorsService,
+      multi: true
+      }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

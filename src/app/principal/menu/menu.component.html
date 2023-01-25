@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">CERTUS</a>
+        <a class="navbar-brand" routerLink="home">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -11,10 +11,24 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" routerLink="formulario">Formulario GET</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="registro">Registro</a>
             </li> 
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" routerLink="busqueda">Busqueda POST</a>
-            </li> 
+                <a class="nav-link active" aria-current="page" routerLink="busqueda">Busqueda getT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="asincrona23">Asíncrona 23</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="componente">Componente</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="login" *ngIf="!userLogin">Iniciar sesion</a>
+                <a class="nav-link active" aria-current="page" routerLink="login" *ngIf="userLogin" (click)="logout()">Cerrar sesion</a>
+            </li>
+            
         </ul>
         </div>
     </div>

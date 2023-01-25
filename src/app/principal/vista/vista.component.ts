@@ -17,11 +17,25 @@ constructor(private userService: UserserviceService){}
 listado = new Array();
 
 ngOnInit(){
+
+
+
+
+
+  /*
+  **EJECUTAR METODO  Y  recuperar json devuelto  por la apoi
 this.userService.getUsersAll().subscribe({
 next: (UserAll: Users[]) => this.listado = UserAll,
 error: (e) => console.error(e),
 complete: () => console.info("La API devolcio todos los registros")
 });
+*/
+// Ejecutar  el metodo getUserAllInterceptor
+this.userService.getUserAllInterceptor().subscribe({
+  next: (response: any) => {this.listado = response.body; console.log(response)},
+  error: (e) => console.error(e),
+  complete: () => console.info("La API devolcio todos los registros")
+  });
 }
 
 }
